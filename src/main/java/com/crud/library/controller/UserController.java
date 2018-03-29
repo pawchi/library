@@ -5,10 +5,7 @@ import com.crud.library.mapper.UserMapper;
 import com.crud.library.service.DbManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
-
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 
@@ -42,7 +39,7 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value = "createUser",consumes = APPLICATION_JSON_VALUE)
-    public void createUser(UserDto userDto){
+    public void createUser(@RequestBody UserDto userDto){
         manager.saveUser(userMapper.mapToUser(userDto));
     }
 

@@ -30,6 +30,7 @@ public class User {
     @Column(name = "ACCOUNT_CREATED_ON")
     private int createAccountDate;
 
+
     public User() {
     }
 
