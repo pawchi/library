@@ -36,29 +36,6 @@ public class DbManager {
 
 
     //Odpowiada z łączenie się z bazą danych
-    /*
-    private Connection conn;
-    private static DbManager dbManagerInstance;
 
-    private DbManager() throws SQLException {
-        Properties connectionProps = new Properties();
-        connectionProps.put("user", "pablo");
-        connectionProps.put("password", "muminia");
-        conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/library?serverTimezone=Europe/Warsaw" +
-                        "&useSSL=False",
-                connectionProps);
-    }
-
-    public static DbManager getInstance() throws SQLException {
-        if (dbManagerInstance == null) {
-            dbManagerInstance = new DbManager();
-        }
-        return dbManagerInstance;
-    }
-
-    public Connection getConnection() {
-        return conn;
-    }*/
 
 }

@@ -9,15 +9,17 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 //@AllArgsConstructor
 //@NoArgsConstructor
 //@Getter
+//@Setter
 @Entity(name = "USERS")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    @NotNull
+    //@NotNull
     @Column(name = "USERID", unique = true)
     private Long id;
 
@@ -28,13 +30,21 @@ public class User {
     private String surname;
 
     @Column(name = "ACCOUNT_CREATED_ON")
-    private int createAccountDate;
+    private LocalDate createAccountDate;
 
+    //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-mm-dd");
 
     public User() {
     }
 
-    public User(Long id, String firstName, String surname, int createAccountDate) {
+    public User(String firstName, String surname, LocalDate createAccountDate) {
+
+        this.firstName = firstName;
+        this.surname = surname;
+        this.createAccountDate = createAccountDate;
+    }
+
+    public User(Long id, String firstName, String surname, LocalDate createAccountDate) {
         this.id = id;
         this.firstName = firstName;
         this.surname = surname;
@@ -65,11 +75,11 @@ public class User {
         this.surname = surname;
     }
 
-    public int getCreateAccountDate() {
+    public LocalDate getCreateAccountDate() {
         return createAccountDate;
     }
 
-    public void setCreateAccountDate(int createAccountDate) {
+    public void setCreateAccountDate(LocalDate createAccountDate) {
         this.createAccountDate = createAccountDate;
     }
 }

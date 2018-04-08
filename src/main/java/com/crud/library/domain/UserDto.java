@@ -3,20 +3,24 @@ package com.crud.library.domain;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.time.LocalDate;
 
 //@Getter
+//@Setter
 //@AllArgsConstructor
 //@NoArgsConstructor
 public class UserDto {
     private Long id;
     private String firstName;
     private String surname;
-    private int createAccountDate;
+    private LocalDate createAccountDate;
 
     public UserDto() {
     }
 
-    public UserDto(Long id, String firstName, String surname, int createAccountDate) {
+    public UserDto(Long id, String firstName, String surname, LocalDate createAccountDate) {
         this.id = id;
         this.firstName = firstName;
         this.surname = surname;
@@ -47,11 +51,11 @@ public class UserDto {
         this.surname = surname;
     }
 
-    public int getCreateAccountDate() {
+    public LocalDate getCreateAccountDate() {
         return createAccountDate;
     }
 
-    public void setCreateAccountDate(int createAccountDate) {
+    public void setCreateAccountDate(LocalDate createAccountDate) {
         this.createAccountDate = createAccountDate;
     }
 }
