@@ -5,9 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import java.time.LocalDate;
+import javax.persistence.*;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,15 +14,26 @@ import java.time.LocalDate;
 @Setter
 @Entity(name = "RENTING")
 public class Renting {
-    @Column(name = "ITEMID")
-    private Long itemId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    @Column(name = "RENTING_ID", unique = true)
+    private Long rentingId;
+
+    @Column(name = "BOOK_ID")
+    private BookItem bookItem;
 
     @Column(name = "USERID")
-    private Long userId;
+    private User user;
 
     @Column(name = "RENTINGDATE")
-    private LocalDate rentingDate;
+    private Date rentingDate;
 
     @Column(name = "RETURNDATE")
-    private LocalDate returnDate;
+    private Date returnDate;
+
+    public Renting(BookItem bookItem, User user, Date rentingDate) {
+        this.bookItem = bookItem;
+        this.user = user;
+        this.rentingDate = rentingDate;
+    }
 }

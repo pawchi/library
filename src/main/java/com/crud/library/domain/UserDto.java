@@ -7,16 +7,16 @@ import lombok.Setter;
 
 import java.time.LocalDate;
 
-//@Getter
-//@Setter
-//@AllArgsConstructor
-//@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
     private Long id;
     private String firstName;
     private String surname;
-    private LocalDate createAccountDate;
-
+    private int createAccountDate;
+/*
     public UserDto() {
     }
 
@@ -57,5 +57,5 @@ public class UserDto {
 
     public void setCreateAccountDate(LocalDate createAccountDate) {
         this.createAccountDate = createAccountDate;
-    }
+    }*/
 }

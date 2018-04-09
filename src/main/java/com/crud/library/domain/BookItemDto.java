@@ -11,6 +11,6 @@ import lombok.Setter;
 @Setter
 public class BookItemDto {
     private Long itemId;
-    private Long titleId;
+    private Book book;
     private String status;
 }

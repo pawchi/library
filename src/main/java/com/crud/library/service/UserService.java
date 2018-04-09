@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.Properties;
 
 @Service
-public class DbManager {
+public class UserService {
 
     @Autowired
     private UserRepository repository;

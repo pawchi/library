@@ -1,15 +1,11 @@
 package com.crud.library;
 
-import com.crud.library.service.DbManager;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

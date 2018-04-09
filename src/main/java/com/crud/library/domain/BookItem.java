@@ -19,8 +19,8 @@ public class BookItem {
     @Column(name = "ITEMID", unique = true)
     private Long itemId;
 
-    @Column(name = "TITLEID")
-    private Long titleId;
+    @Column(name = "BOOK_ID")
+    private Book book;
 
     @Column(name = "STATUS")
     private String status;

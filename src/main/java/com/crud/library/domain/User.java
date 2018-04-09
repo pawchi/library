@@ -11,10 +11,10 @@ import javax.validation.constraints.NotNull;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Getter
-//@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity(name = "USERS")
 public class User {
     @Id
@@ -30,10 +30,10 @@ public class User {
     private String surname;
 
     @Column(name = "ACCOUNT_CREATED_ON")
-    private LocalDate createAccountDate;
+    private int createAccountDate;
 
     //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-mm-dd");
-
+/*
     public User() {
     }
 
@@ -81,5 +81,5 @@ public class User {
 
     public void setCreateAccountDate(LocalDate createAccountDate) {
         this.createAccountDate = createAccountDate;
-    }
+    }*/
 }

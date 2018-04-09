@@ -6,14 +6,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class RentingDto {
-    private Long itemId;
-    private Long userId;
-    private LocalDate rentingDate;
-    private LocalDate returnDate;
+    private Long rentingId;
+    private BookItem bookItem;
+    private User user;
+    private Date rentingDate;
+    private Date returnDate;
 }

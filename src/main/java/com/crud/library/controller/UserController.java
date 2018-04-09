@@ -2,7 +2,7 @@ package com.crud.library.controller;
 
 import com.crud.library.domain.UserDto;
 import com.crud.library.mapper.UserMapper;
-import com.crud.library.service.DbManager;
+import com.crud.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -14,7 +14,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @CrossOrigin(origins = "*")
 public class UserController {
     @Autowired
-    private DbManager manager;
+    private UserService manager;
     @Autowired
     private UserMapper userMapper;
 
