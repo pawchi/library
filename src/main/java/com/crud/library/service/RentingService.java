@@ -18,16 +18,15 @@ public class RentingService {
     private RentingRepository rentingRepository;
 
     @Autowired
-    private BookItemRepository bookItemRepository;
+    private BookItemService bookItemService;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
-    public Renting rentBookByUser (Long itemId, Long userId){
+    public Renting rentBookByUser (final Long bookItemId,final Long userId){
 
-        BookItem bookItem = bookItemRepository.findOne(itemId);
-        User user = userRepository.findOne(userId);
-
+        BookItem bookItem = bookItemService.getBookItemById(bookItemId);
+        User user = userService.getUserById(userId);
         Date date = new Date();
 
         Renting renting = new Renting(bookItem,user,date);
