@@ -19,16 +19,18 @@ public class Renting {
     @Column(name = "RENTING_ID", unique = true)
     private Long rentingId;
 
-    @Column(name = "BOOK_ID")
+    @ManyToOne
+    @JoinColumn(name = "BOOK_ITEM_ID")
     private BookItem bookItem;
 
-    @Column(name = "USERID")
+    @ManyToOne
+    @JoinColumn(name = "USER_ID")
     private User user;
 
-    @Column(name = "RENTINGDATE")
+    @Column(name = "RENTING_DATE")
     private Date rentingDate;
 
-    @Column(name = "RETURNDATE")
+    @Column(name = "RETURN_DATE")
     private Date returnDate;
 
     public Renting(BookItem bookItem, User user, Date rentingDate) {

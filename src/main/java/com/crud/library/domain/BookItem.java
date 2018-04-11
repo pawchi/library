@@ -15,11 +15,11 @@ import javax.persistence.*;
 public class BookItem {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    //@NotNull
     @Column(name = "ITEMID", unique = true)
     private Long itemId;
 
-    @Column(name = "BOOK_ID")
+    @ManyToOne
+    @JoinColumn(name = "BOOK_ID")//(foreignKey = @ForeignKey(name = "BOOK_ID"),nullable = false)
     private Book book;
 
     @Column(name = "STATUS")
